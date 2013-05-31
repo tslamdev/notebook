@@ -8,4 +8,10 @@
   </li>
 <% end %>
 
+  <li>
+    <%= form_for(Note.new, remote: true) do |f| %>
+      <%= f.text_field :content, placeholder: 'Add a new Aha! here' %>
+    <% end %>
+  </li>
+
 </ul>
