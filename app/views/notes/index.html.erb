@@ -1,17 +1,13 @@
 <ul>
 
-<% @notes.each do |note| %>
-  <li id="note_<%= note.id %>">
-    <%= note.content %>
-    <%= link_to image_tag('trash-can-icon.jpg', height: 20), note_url(note), method: 'delete', remote: true %>
-    <%= link_to image_tag('pencil.png', height: 20), edit_note_url(note) %>
-  </li>
+<% @notes.each do |n| %>
+  <%= render 'one_note', :note => n  %>
 <% end %>
 
-  <li>
-    <%= form_for(Note.new, remote: true) do |f| %>
-      <%= f.text_field :content, placeholder: 'Add a new Aha! here' %>
-    <% end %>
-  </li>
-
 </ul>
+
+<%= form_for(Note.new, remote: true) do |f| %>
+  <%= f.text_field :content, placeholder: 'Add a new Aha! here' %>
+<% end %>
+
+
