@@ -12,3 +12,6 @@
  *= require_tree .
  */
 
+.ui-state-highlight {
+  border: thick solid blue;
+}
