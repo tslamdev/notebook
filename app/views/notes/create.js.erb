@@ -1,3 +1,4 @@
-$("ul").append("<%= j(render('one_note', note: @note)) %>");
-
+<% publish_to "/notes/new" do %>
+  $("ul").append("<%= j(render('one_note', note: @note)) %>");
+<% end %>
 $("#note_content").val("");
